@@ -1,0 +1,217 @@
+.highScores-container {
+  height: calc(100vh - 60px); /* Adjusted height to account for navbar */
+  background-color: #000000;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  overflow-y: auto; /* Add overflow-y to enable scrolling if content exceeds viewport */
+}
+.highScores-container-table {
+  margin: 2rem 0; /* Reduced margin */
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #000;
+  padding: 1rem; /* Reduced padding */
+}
+.highScores-container h1 {
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+  text-shadow: 0px 0px 5px #24ecff, 0px 0px 10px #24ecff, 0px 0px 10px #24ecff,
+    0px 0px 20px #24ecff;
+ /* color: #24ecff; */
+ /* text-shadow: 0 0 6px #00ff15, 0 0 15px #0000ff;;*/
+  font-size: 6rem; 
+}
+
+.highScores-container-table th {
+  border: 2px solid #000;
+  text-align: center;
+  padding: 1rem; /* Reduced padding */
+  font-size: 3rem;
+  color: #24ecff
+   }
+  
+  .highScores-container {
+    height: calc(100vh - 60px); /* Adjusted height to account for navbar */
+    background-color: #000000;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+    overflow-y: auto; /* Add overflow-y to enable scrolling if content exceeds viewport */
+  }
+  .highScores-container-table {
+    margin: 2rem 0; /* Reduced margin */
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    padding: 1rem; /* Reduced padding */
+  }
+  
+  .highScores-container-table th {
+    border: 2px solid #24ecff55;
+    text-align: center;
+    padding: 1rem; /* Reduced padding */
+    font-size: 2rem;
+  }
+  
+  .highScores-container-table td {
+    border: 1px solid #24ecff55;
+    text-align: center;
+    padding: 1rem; /* Reduced padding */
+    font-size: 1.7rem;
+    color: #24ecff;
+
+  }
+  ;
+}
+
+.highScores-container-table td {
+  border: 1px solid #000;
+  text-align: center;
+  padding: 1rem; /* Reduced padding */
+  font-size: 1.2rem;
+  color: #000;
+}
+
+.anime_container {
+  margin-top: 6rem;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ring {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  border: 4px solid transparent;
+  border-top: 4px solid #24ecff55;
+  border-radius: 50%;
+  margin: -100px;
+  filter: drop-shadow(0 0 10px #24ecff) drop-shadow(0 0 30px #24ecff)
+    drop-shadow(0 0 50px #24ecff) drop-shadow(0 0 70px #24ecff);
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ring::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+}
+
+.ring i {
+  position: absolute;
+  font-size: 24px; /* Adjust the font size to make the star bigger */
+  bottom: 10%;
+  top: 50%; /* Adjust the position of the star vertically to the middle */
+  right: 0; /* Position the star at the beginning of the line */
+  transform: translate(-50%, -50%); /* Adjust the position to center the star */
+  color: #24ecff; /* Set the same color as the lines */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .anime_container {
+    margin-top: 0; /* Reset margin-top */
+  }
+
+  .ring {
+    height: 30vh; /* Decrease height for smaller screens */
+  }
+
+  .ring i {
+    font-size: 16px; /* Decrease font size for smaller screens */
+    left: 15%; /* Adjust the position for smaller screens */
+  }
+}
+
+/* Media query for mobile phones */
+@media (max-width: 480px) {
+  .ring {
+    height: 20vh;
+    max-width: 300px;
+  }
+
+  .ring i {
+    font-size: 12px;
+    left: 20%;
+  }
+}
+
+
+.back-button {
+  
+  text-decoration: none;
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #24ecff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.back-button:before{
+  content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.back-button:active {
+  color: #000
+}
+
+.back-button:active:after{
+  background: transparent;
+}
+
+.back-button:hover:before{
+  opacity: 1;
+}
+
+.back-button:after{
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
